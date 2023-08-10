@@ -90,23 +90,23 @@ class DataTransformation:
             ## Dividing DataSet into Independent and Dependent Dataset
             ## training data
 
-            X_train1=train_df.drop(columns=drop_columns,axis=1)
+            X_train_arr=train_df.drop(columns=drop_columns,axis=1)
             y_train1=train_df[target_column]
 
             ## test_data
 
-            X_test1=test_df.drop(columns=drop_columns,axis=1)
+            X_test_arr=test_df.drop(columns=drop_columns,axis=1)
             y_test1=test_df[target_column]
 
 
             ## Data Transformation
-            X_train_arr=preprocessing_obj.fit_transform(X_train1)
-            X_test_arr=preprocessing_obj.transform(X_test1)
+            X_train_arr=preprocessing_obj.fit_transform(X_train_arr)
+            X_test_arr=preprocessing_obj.transform(X_test_arr)
 
             logging.info("Appling Preprocessing object on training and testing dataset.")
 
-            train_arr=np.c_[X_train1,np.array(y_train1)]
-            test_arr=np.c_[X_test1,np.array(y_test1)]
+            train_arr=np.c_[X_train_arr,np.array(y_train1)]
+            test_arr=np.c_[X_test_arr,np.array(y_test1)]
 
             
             save_object(
