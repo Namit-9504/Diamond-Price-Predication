@@ -13,7 +13,6 @@ import numpy as np
 from src.exception import CustomException
 from src.logger import logging
 
-
 from src.utils import save_object
 
 
@@ -71,7 +70,7 @@ class DataTransformation:
             ('cat_pipeline',cat_pipeline,categorical_cols)
             ])
             
-
+            
             return preprocessor
 
             logging.info('Pipeline Completed')
@@ -80,6 +79,9 @@ class DataTransformation:
             
             logging.info("Error in Data Trnasformation")
             raise CustomException(e,sys)
+
+
+
     def initiate_data_transformation(self,train_path,test_path):
         try:
             # Reading train and test data
@@ -101,6 +103,8 @@ class DataTransformation:
 
             input_feature_train_df = train_df.drop(columns=drop_columns,axis=1)
             target_feature_train_df=train_df[target_column_name]
+
+
             input_feature_test_df=test_df.drop(columns=drop_columns,axis=1)
             target_feature_test_df=test_df[target_column_name]
 
@@ -126,7 +130,6 @@ class DataTransformation:
                 train_arr,
                 test_arr,
                 self.data_transformation_config.preprocessor_obj_file_path
-
             )
         
         except Exception as e:
