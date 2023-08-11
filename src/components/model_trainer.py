@@ -54,7 +54,7 @@ class Modeltrainer:
                 list(model_report.values()).index(Best_model_score)
             ]
 
-            Best_model=models(Best_model_name)
+            Best_model=models[Best_model_name]
 
             print(f"Best Model Found, Best model is {Best_model_name} Best R2_score is {Best_model_score}")
             print("\n=============================================================================================================")
@@ -66,4 +66,5 @@ class Modeltrainer:
             )
 
         except Exception as e:
+            logging.info("Exception Occurs at Model training")
             raise CustomException(e,sys)

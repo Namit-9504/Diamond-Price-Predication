@@ -70,7 +70,7 @@ class DataTransformation:
             ('cat_pipeline',cat_pipeline,categorical_cols)
             ])
             
-            
+
             return preprocessor
 
             logging.info('Pipeline Completed')
