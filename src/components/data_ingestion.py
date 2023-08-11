@@ -11,9 +11,9 @@ from dataclasses import dataclass
 ## Intitialize the Data Ingestion Configuration
 @dataclass
 class Dataconfiguration:
-    train_data_path:str=os.path.join("artifatcs",'train.csv')
-    test_data_path:str=os.path.join("artifatcs",'test.csv')
-    raw_data_path:str=os.path.join("artifatcs","raw.csv")
+    train_data_path:str=os.path.join("artifacts",'train.csv')
+    test_data_path:str=os.path.join("artifacts",'test.csv')
+    raw_data_path:str=os.path.join("artifacts","raw.csv")
 
 ## Create Data ingestion class
 class DataIngestion:

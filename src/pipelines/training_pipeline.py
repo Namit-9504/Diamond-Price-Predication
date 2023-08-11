@@ -12,4 +12,4 @@ if __name__ == '__main__':
     train_data_path,test_data_path=obj.initiate_data_ingestion()
     print(train_data_path,test_data_path)
     data_transformation=DataTransformation()
-    train_arr,test_arr,obj_path=data_transformation.initiate_data_trasformation(train_data_path,test_data_path)
+    train_arr,test_arr,obj_path=data_transformation.initiate_data_transformation(train_data_path,test_data_path)
